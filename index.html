@@ -201,50 +201,8 @@
       </ul>
     </footer>
 
-    <!-- Chatbot UI -->
-    <div id="chatbot-container">
-      <div id="chatbot-header">Chat with us!</div>
-      <div id="chatbot-body">
-        <div id="chat-log"></div>
-        <input
-          type="text"
-          id="chat-input"
-          placeholder="Type your message..."
-          onkeypress="if(event.key === 'Enter') sendMessage()"
-        />
-      </div>
-    </div>
-
-    <!-- Chatbot Script -->
-    <script>
-      function sendMessage() {
-        const input = document.getElementById('chat-input');
-        const log = document.getElementById('chat-log');
-        const userMsg = input.value.trim();
-        if (!userMsg) return;
-
-        // Append user message
-        log.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
-
-        // Simple Bot Responses
-        let botReply = "Sorry, I'm just a demo chatbot. How can I assist you with our shoes today?";
-
-        const msg = userMsg.toLowerCase();
-        if (msg.includes("return")) {
-          botReply = 'You can view our return policy <a href="./HTML/refund-policy.html">here</a>.';
-        } else if (msg.includes("contact")) {
-          botReply = 'You can reach us through the <a href="./HTML/Contact-us.html">Contact Us</a> page.';
-        } else if (msg.includes("hello") || msg.includes("hi")) {
-          botReply = "Hello! How can I help you today?";
-        }
-
-        setTimeout(() => {
-          log.innerHTML += `<div><strong>Bot:</strong> ${botReply}</div>`;
-          log.scrollTop = log.scrollHeight;
-        }, 500);
-
-        input.value = "";
-      }
-    </script>
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="Jrd6WLXPIGbztflw72bd3";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
   </body>
 </html>
